@@ -35,6 +35,7 @@ int foo(void) { return -X; }
 so (following the ISO C rules) its data type is unsigned long int. Negating this
 value yields 2147483648 again."
 
+
 5) Surprising math:
 
 int x = 0xfffe+0x0001;
@@ -186,7 +187,23 @@ With:
 	make it so smart that it is hard to figure out
 	what the code is really doing
 
-24) Make it look different, format code into pictures
+24) Abuse sizeof
+
+int foo(const int i) 
+{
+        char x[i];
+
+        return sizeof x;
+}
+
+int
+main(void)
+{
+        printf("%d\n", foo(-1));
+}
+
+
+25) Make it look different, format code into pictures
 
 Example:
 
