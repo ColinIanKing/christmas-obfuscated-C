@@ -6,3 +6,5 @@ all:
 clean:
 	$(foreach Y,$(YEARS),$(MAKE) -C $(Y) clean;)
 
+install:
+	$(foreach Y,$(YEARS),$(MAKE) -C $(Y) install;)
