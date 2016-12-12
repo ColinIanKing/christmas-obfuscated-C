@@ -1,0 +1,28 @@
+name: christmas-obfuscated-c
+version: 0.2016.1
+summary: Christmas Obfuscated C programs
+description: These programs are the collection of Colin Ian King's Christmas themed Obfuscated C programs from https://github.com/ColinIanKing/christmas-obfuscated-C
+confinement: strict
+
+parts:
+    all:
+        plugin: make
+        source: ..
+        build-packages:
+            - gcc
+            - make
+            - libncurses5-dev
+            - libgmp3-dev
+
+apps:
+    christmas-2012:
+        command: christmas-2012
+    koch-binary:
+        command: koch-binary
+    snowman:
+        command: snowman
+    tupper:
+        command: tupper
+    snow:
+        command: snow
+
