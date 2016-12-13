@@ -11,7 +11,7 @@ parts:
         build-packages:
             - gcc
             - make
-            - libncurses5-dev
+            - libncursesw5-dev
             - libgmp3-dev
 
 apps:
