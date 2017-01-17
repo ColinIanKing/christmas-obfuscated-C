@@ -251,3 +251,12 @@ Example:
  i:I[C];P+=(L&1)+1;V  
  +=A-((L&2)>>1);}re\  
  turn/*c.i.king*/0;}  
+
+26) Doing nothing
+
+        ({_:&&_;});
+
+        ({});
+
+        ({;});
+
