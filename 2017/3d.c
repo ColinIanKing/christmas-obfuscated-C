@@ -29,7 +29,7 @@ void transform(p_t *p,
 	float c_psi_c_theta = c_psi * c_theta;
 	float s_psi_c_theta = s_psi * c_theta;
 
- 	xx = (((c_psi_c_theta * c_phi) - (s_psi * s_phi)) * x) + 
+ 	xx = (((c_psi_c_theta * c_phi) - (s_psi * s_phi)) * x) +
 	      (((-c_psi_c_theta * s_phi) - (s_psi * c_phi)) * y) +
 		((c_psi * s_theta) * z);
 
@@ -44,7 +44,7 @@ void transform(p_t *p,
 	zd = zz + depth;
 	xx = xx * depth / zd;
 	yy = yy * depth / zd;
-	
+
 	xx = xx + (COLS / 4);
 	yy = yy + (LINES / 2);
 
@@ -144,7 +144,7 @@ void make_tree(p_t *p)
 	int i, j;
 
 	P(p, 0, o++, 0);
-	for (i = 0; i < 6; i++) {	
+	for (i = 0; i < 6; i++) {
 		for (j = 0; j < 3; j++) {
 			P(p, 0 - i - j, o, 0);
 			P(p, 0 + i + j, o, 0);
@@ -240,7 +240,7 @@ int main()
 		float s_psi = sin(psi);
 		float s_theta = sin(theta);
 		float s_phi = sin(phi);
-	
+
 		for (p = cube[c]; p->x < END; p++)
 			transform(p, c_psi, c_theta, c_phi, s_psi, s_theta, s_phi, depth, zoom);
 
@@ -252,7 +252,6 @@ int main()
 			c = (c + 1) % 6;
 			zoom = 0.0;
 		}
-			
 
 		wrefresh(w);
 		refresh();
