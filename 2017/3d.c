@@ -6,28 +6,30 @@
 
 #define END 1.0E6
 
+float typedef F;
+
 typedef struct {
-	float x;
-	float y;
-	float z;
+	F x;
+	F y;
+	F z;
 } p_t;
 
 WINDOW *w;
 
 void transform(p_t *p,
-	       float c_psi, float c_theta, float c_phi,
-	       float s_psi, float s_theta, float s_phi,
-	       float depth, float zoom)
+	       F c_psi, F c_theta, F c_phi,
+	       F s_psi, F s_theta, F s_phi,
+	       F depth, F zoom)
 {
 	char buf[256];
-	float xx, yy, zz, zd;
-	float x = p->x * zoom;
-	float y = p->y * zoom;
-	float z = p->z * zoom;
+	F xx, yy, zz, zd;
+	F x = p->x * zoom;
+	F y = p->y * zoom;
+	F z = p->z * zoom;
 	int i;
 
-	float c_psi_c_theta = c_psi * c_theta;
-	float s_psi_c_theta = s_psi * c_theta;
+	F c_psi_c_theta = c_psi * c_theta;
+	F s_psi_c_theta = s_psi * c_theta;
 
  	xx = (((c_psi_c_theta * c_phi) - (s_psi * s_phi)) * x) +
 	      (((-c_psi_c_theta * s_phi) - (s_psi * c_phi)) * y) +
@@ -92,7 +94,7 @@ void make_snow(p_t *p)
 	int i;
 
 	for (i = 0; i < 2000; i++) {
-		float x, y, z;
+		F x, y, z;
 
 redo:
 		x = -100.0 + (random() % 2000) / 10;
@@ -107,10 +109,10 @@ redo:
 
 void make_globe(p_t *p)
 {
-	float i;
+	F i;
 
 	for (i = 0.0; i < 2 * M_PI; i += 0.1) {
-		float x, y;
+		F x, y;
 		x = 10 * sin(i);
 		y = 10 * cos(i);
 
@@ -124,7 +126,7 @@ void make_globe(p_t *p)
 void make_star(p_t *p)
 {
 	int i;
-	float o = 6;
+	F o = 6;
 	for (i = -10; i <= 10; i++) {
 		P(p, i, - o, 0);
 		P(p, (- i + 10)/2,  -o + ((i+10) * sqrt(3)/2) , 0);
@@ -165,7 +167,7 @@ void make_tree(p_t *p)
 
 void make_flake(p_t *p)
 {
-	float i, k = 0.866;
+	F i, k = 0.866;
 
 	for (i = 0.0; i < 12.0; i += 1.0) {
 		P(p, 0, i, 0);
@@ -196,12 +198,12 @@ void make_flake(p_t *p)
 
 int main()
 {
-	float psi = 0.0, theta = 0.0, phi = 0.0;
-	float ax = 0.0, bx = 0.0, cz = 2.0;
+	F psi = 0.0, theta = 0.0, phi = 0.0;
+	F ax = 0.0, bx = 0.0, cz = 2.0;
 
-	float x, y, z;
-	float depth = 200;
-	float zoom, dz = 0.003;
+	F x, y, z;
+	F depth = 200;
+	F zoom, dz = 0.003;
 	p_t cube[7][5000];
 	int c;
 
@@ -227,19 +229,19 @@ int main()
 	zoom = 0.0;
 	for (;;) {
 		p_t *p;
-		float i;
+		F i;
 
 		wclear(w);
 		psi += M_PI / 210;
 		theta += M_PI / 500;
 		phi += M_PI / 750;
 
-		float c_psi = cos(psi);
-		float c_theta = cos(theta);
-		float c_phi = cos(phi);
-		float s_psi = sin(psi);
-		float s_theta = sin(theta);
-		float s_phi = sin(phi);
+		F c_psi = cos(psi);
+		F c_theta = cos(theta);
+		F c_phi = cos(phi);
+		F s_psi = sin(psi);
+		F s_theta = sin(theta);
+		F s_phi = sin(phi);
 
 		for (p = cube[c]; p->x < END; p++)
 			transform(p, c_psi, c_theta, c_phi, s_psi, s_theta, s_phi, depth, zoom);
