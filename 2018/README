@@ -1,0 +1,10 @@
+Make the program:
+
+make
+
+Make the output
+
+make message
+
+And play the wav file using your favourite audio player.
+
