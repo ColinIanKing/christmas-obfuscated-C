@@ -25,4 +25,6 @@ apps:
         command: tupper
     snow:
         command: snow
+    happy-christmas:
+        command: happy-christmas
 
