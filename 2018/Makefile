@@ -8,3 +8,7 @@ message: happy-christmas
 
 clean:
 	rm -f happy-christmas happy-christmas.wav
+
+install:
+	mkdir -p ${DESTDIR}/${BINDIR}
+	cp happy-christmas ${DESTDIR}/${BINDIR}
