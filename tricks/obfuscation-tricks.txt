@@ -260,3 +260,13 @@ Example:
 
         ({;});
 
+	switch (0);
+
+27) abusing __VA_ARGS__
+
+One can pass an entire function body into a macro using __VA_ARGS__
+
+#define F(f, ...) f __VA_ARGS__
+
+F(void foo(void) { printf("foo\n"); })
+
