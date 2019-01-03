@@ -270,3 +270,26 @@ One can pass an entire function body into a macro using __VA_ARGS__
 
 F(void foo(void) { printf("foo\n"); })
 
+28) Turn array to a pointer using +
+
+	foo(&array[0]);
+
+	instead use:
+
+	foo(+array);
+
+29)
+
+	int x = 1;
+
+	foo(&x);
+
+	use:
+
+	foo( (int[]){1} );
+
+30) Zero'ing
+
+	a ^= a;
+	a = '-'-'-';
+
