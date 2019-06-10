@@ -293,3 +293,20 @@ F(void foo(void) { printf("foo\n"); })
 	a ^= a;
 	a = '-'-'-';
 
+31) Variable names:
+
+char broiled;
+double burger;
+short cake;
+float icecream;
+long story;
+signed sincerely;
+static electricity;
+auto mechanic;
+volatile substance;
+register electorat;
+unsigned autobiography;
+void *gazing_back;
+char witness;
+const*able;
+union dues {};
