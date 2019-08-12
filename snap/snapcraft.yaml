@@ -1,5 +1,7 @@
 name: christmas-obfuscated-c
-version: 0.2016.1
+version: git
+version-script: |
+    echo $(git describe --tags)
 summary: Christmas Obfuscated C programs
 description: These programs are the collection of Colin Ian King's Christmas themed Obfuscated C programs from https://github.com/ColinIanKing/christmas-obfuscated-C
 confinement: strict
