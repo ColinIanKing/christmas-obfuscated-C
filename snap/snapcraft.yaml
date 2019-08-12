@@ -10,11 +10,14 @@ parts:
     all:
         plugin: make
         source: ..
+        stage-packages:
+            - libtinfo-dev
         build-packages:
             - gcc
             - make
             - libncursesw5-dev
             - libgmp3-dev
+            - libtinfo-dev
 
 apps:
     christmas-2012:
