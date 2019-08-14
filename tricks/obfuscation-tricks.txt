@@ -310,3 +310,10 @@ void *gazing_back;
 char witness;
 const*able;
 union dues {};
+
+31) Precendence rules abuse:
+
+#include <stdio.h>
+int main(void) { int array[] = {1, 2, 3}; int *p = &array[1]; printf("%d\n", -1[p]); }
+
+-1[p] is -(*(1 + p)) and not *(-1 + p)
