@@ -317,3 +317,15 @@ union dues {};
 int main(void) { int array[] = {1, 2, 3}; int *p = &array[1]; printf("%d\n", -1[p]); }
 
 -1[p] is -(*(1 + p)) and not *(-1 + p)
+
+32) Make simple expressions more complex
+
+	u8 val;
+
+	tricky				simple
+	if (val && ~val)		if (val)
+		break;				break;
+
+33) Fun ways to increment:
+
+	i-=-1;
