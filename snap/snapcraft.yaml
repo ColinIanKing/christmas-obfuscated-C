@@ -33,4 +33,5 @@ apps:
         command: snow
     happy-christmas:
         command: happy-christmas
-
+    snowman2019:
+        command: snowman2019
