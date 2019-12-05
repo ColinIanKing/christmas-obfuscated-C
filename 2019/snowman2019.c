@@ -2,7 +2,7 @@
 char typedef unsigned
 #define P(o,p,O) R[o]=O
 #define p(O,o,P) O[R]o P
-_;_ /* Hints: RLE 85 (C) Colin Ian King 2019                           main(){
+_;_ /* Hints: RLE 85 (C) Colin Ian King 2019 */                         main(){
 
 repository: https://github.com/ColinIanKing/christmas-obfuscated-C
 
