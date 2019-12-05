@@ -1,4 +1,4 @@
-snowman2019: snowman.c
+snowman2019: snowman2019.c
 	gcc $^ -O2 -o $@ 
 	strip $@
 
