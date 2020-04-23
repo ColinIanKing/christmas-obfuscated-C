@@ -329,3 +329,8 @@ int main(void) { int array[] = {1, 2, 3}; int *p = &array[1]; printf("%d\n", -1[
 33) Fun ways to increment:
 
 	i-=-1;
+
+34) Yes/No?
+
+	return (char *[]){"No", "Yes"}[!!x];
+
