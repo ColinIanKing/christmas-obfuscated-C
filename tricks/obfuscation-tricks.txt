@@ -202,7 +202,7 @@ main(void)
         printf("%d\n", foo(-1));
 }
 
-26)
+25)
 
 A void function that returns void(!)
 
@@ -210,7 +210,7 @@ void a (void) { }
 void b (void) { return a(); };
 
 
-25) Make it look different, format code into pictures
+26) Make it look different, format code into pictures
 
 Example:
 
