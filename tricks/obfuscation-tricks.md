@@ -47,11 +47,11 @@ printf("%c\n", index["MyString"]);
 #define X (-2147483648)
 
 int foo(void) { return -X; }
+```
 
 "-2147483648 is positive.  This is because 2147483648 cannot fit in the type int,
 so (following the ISO C rules) its data type is unsigned long int. Negating this
 value yields 2147483648 again."
-```
 
 #### 5) Surprising math:
 
@@ -75,7 +75,11 @@ main(){ int n = 0; for (;;) switch(n) { F } }
 
 #### 7) indirection on function pointers with comments.. 
 
-``` C
+<!-- The C highlighting of GitHub thinks this is an error, and
+will paint a red background on it, so I replaced it with another
+highlight which belongs to an even more cursed language. -->
+
+``` JavaScript
 (**/**/**/**/**/**/**write)(1, "Hello World\n", 12);
 ```
 
@@ -140,7 +144,7 @@ ret\
 urn 0;
 ```
 
-#### 14) Make macros with ( { ; imbalancing to make it more confusing
+#### 14) Make macros with `(` `{` `;` imbalancing to make it more confusing
 
 ``` C
 #define P	printf(
@@ -179,7 +183,7 @@ main() {
         <td><code>##</code></td>
 </tr></table>
 
-#### 16) Use macro definitions of numbers in roman numerals (and make them wrong to confuse reader)
+#### 16) Use macro definitions of numbers in roman numerals (and make them wrong to confuse the reader)
 
 ``` C
 #define XII	(10+3)
@@ -346,7 +350,7 @@ One can pass an entire function body into a macro using `__VA_ARGS__`
 F(void foo(void) { printf("foo\n"); })
 ```
 
-#### 29) Turn array to a pointer using +
+#### 29) Turn array to a pointer using `+`
 
 ``` C
 foo(&array[0]);
