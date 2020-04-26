@@ -334,3 +334,17 @@ int main(void) { int array[] = {1, 2, 3}; int *p = &array[1]; printf("%d\n", -1[
 
 	return (char *[]){"No", "Yes"}[!!x];
 
+35) Use local typedefs to confuse:
+
+int x(int y)
+{
+        return y;
+}
+
+int main(void)
+{
+        printf("%d\n", (x)(257));
+        typedef char x;
+        printf("%d\n", (x)(257));
+}
+
