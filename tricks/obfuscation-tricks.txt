@@ -353,4 +353,16 @@ int main(void)
         const char *foo = "foo";
         char *bar = strchr(foo, *foo);
 
+37) Macro confusion with keywords
+
+#define for(x) while(0)
+
+int main(void)
+{
+        int i;
+
+        for (i = 0; i < 100; i++) {
+                printf("%d\n", i);
+        }
+}
 
