@@ -348,3 +348,9 @@ int main(void)
         printf("%d\n", (x)(257));
 }
 
+36) Unconstifying a const char * pointer without casting
+
+        const char *foo = "foo";
+        char *bar = strchr(foo, *foo);
+
+
