@@ -366,3 +366,16 @@ int main(void)
         }
 }
 
+
+38) Use lesser used syntax:
+
+void what(char s[static volatile restrict 0])
+{
+        printf("%s\n", s);
+}
+
+main()
+{
+        what("foo");
+}
+
