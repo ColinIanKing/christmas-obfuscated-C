@@ -114,7 +114,7 @@ int main(){ return linux > unix; }
 #define X	);}
 
 main() {
-	P("Hello Word" X
+	P("Hello World" X
 
 15) Use gcc alternate digraphs for fun!
 
