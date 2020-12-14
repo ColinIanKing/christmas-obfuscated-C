@@ -10,9 +10,11 @@ ifeq (, $(shell which aplay))
 $(error "Tool aplay not found, please install it")
 endif
 
+CC ?= clang
+
 wavy: wavy.c
 	@echo $(CC) $^ -Os -o $@ -lm
-	@$(CC) $^ -DG=return -Dg=typedef -DJ=for -DY=$(M1)$(M2)$(M3)$(M4) -Os -o $@ -lm
+	$(CC) $^ -DG=return -Dg=typedef -DJ=for -DY=$(M1)$(M2)$(M3)$(M4) -Os -o $@ -lm
 
 music: wavy
 	./wavy | aplay
