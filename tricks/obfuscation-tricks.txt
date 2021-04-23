@@ -388,3 +388,23 @@ main()
 
 	while ((*(int[]){1})--)
 
+41) ternary type conversions:
+
+see: http://smackerelofopinion.blogspot.com/2021/04/c-ternary-operator-gotcha-type.html
+
+#include <stdlib.h>
+#include <stdio.h>
+
+long int ternary(int a, unsigned int x)
+{
+        return a ? a : x;
+}
+
+int main(void)
+{
+
+        printf("%ld\n", ternary(-1, 0));
+        return 0;
+}
+
+
