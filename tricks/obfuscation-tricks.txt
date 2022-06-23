@@ -26,10 +26,13 @@ Literal string abuse, like above in principle
 4) Abuse unexpected results:
 
 #include <stdio.h>
-
 #define X (-2147483648)
 
 int foo(void) { return -X; }
+int main(void)
+{
+	printf("%d\n", foo());
+}
 
 "-2147483648 is positive.  This is because 2147483648 cannot fit in the type int,
 so (following the ISO C rules) its data type is unsigned long int. Negating this
@@ -407,4 +410,5 @@ int main(void)
         return 0;
 }
 
-
+42)
+	0x80000000 == -0x80000000 is true
